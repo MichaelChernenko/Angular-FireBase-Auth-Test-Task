@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="form-modal">
+    <h1 class="heading">Login with FireBase</h1>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" formControlName='email' class='form-control'>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName='password' class='form-control'>
+        <label class="message message--error">{{errorMsg}}</label>
+      </div>
+      <button type='submit' (click)='loginUser(loginForm.value)' class='btn btn--submit'>Login</button>
+    </form>
+    <button type='button' (click)='GoogleLogin()' class="btn btn--google">Login with Google</button>
+    <button type='button' (click)='FbLogin()' class="btn btn--fb">Login with FaceBook</button>
+    <p class="redirect">No account yet? <span (click)="goToRegister()">Create an account</span></p>
+  </div>
+</div>
